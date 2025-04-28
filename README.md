@@ -25,4 +25,12 @@
 
 "Added GetAll and UpdateUser endpoints to UserController for retrieving and updating users."
 ![Screenshot (162)](https://github.com/user-attachments/assets/dd6c162e-79ee-4c2b-a5cd-8713e5aec56b)
+![Screenshot (163)](https://github.com/user-attachments/assets/32b214d5-61e6-4def-b99b-fcb9076184da)
+
+# Added DeleteUser endpoint
+
+"Implemented DeleteUser endpoint in UserController for deleting a user by name."
+
+![image](https://github.com/user-attachments/assets/2a4dfb53-73f8-45fc-b59a-888d090017c8)
+
 
