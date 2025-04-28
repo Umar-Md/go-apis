@@ -12,14 +12,13 @@ type UserController struct {
 	UserService services.UserService
 }
 
-// New creates a new instance of UserController
+
 func New(userService services.UserService) UserController {
 	return UserController{
 		UserService: userService,
 	}
 }
-
-// CreateUser creates a new user
+	
 func (uc *UserController) CreateUser(ctx *gin.Context) {
 	var user models.User
 	if err := ctx.ShouldBindJSON(&user); err != nil {
@@ -34,7 +33,6 @@ func (uc *UserController) CreateUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"message": "User created successfully"})
 }
 
-// GetUser fetches a user by name
 func (uc *UserController) GetUser(ctx *gin.Context) {
 	username := ctx.Param("name")
 	user, err := uc.UserService.GetUser(&username)
@@ -44,8 +42,6 @@ func (uc *UserController) GetUser(ctx *gin.Context) {
 	}
 	ctx.JSON(http.StatusOK, user)
 }
-
-// GetAll retrieves all users
 func (uc *UserController) GetAll(ctx *gin.Context) {
 	users, err := uc.UserService.GetAll()
 	if err != nil {
@@ -55,7 +51,6 @@ func (uc *UserController) GetAll(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, users)
 }
 
-// UpdateUser updates an existing user
 func (uc *UserController) UpdateUser(ctx *gin.Context) {
 	var user models.User
 	if err := ctx.ShouldBindJSON(&user); err != nil {
@@ -70,7 +65,6 @@ func (uc *UserController) UpdateUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"message": "User updated successfully"})
 }
 
-// DeleteUser deletes a user by name
 func (uc *UserController) DeleteUser(ctx *gin.Context) {
 	username := ctx.Param("name")
 	err := uc.UserService.DeleteUser(&username)
@@ -81,7 +75,6 @@ func (uc *UserController) DeleteUser(ctx *gin.Context) {
 	ctx.JSON(http.StatusOK, gin.H{"message": "User deleted successfully"})
 }
 
-// RegisterUserRoutes registers routes for user management
 func (uc *UserController) RegisterUserRoutes(rg *gin.RouterGroup) {
 	userRoute := rg.Group("/user")
 	userRoute.POST("/create", uc.CreateUser)
