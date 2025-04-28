@@ -15,3 +15,14 @@
 # Implemented UserController and routes
 
 "Created UserController with routes for creating, fetching, updating, and deleting users."
+
+# Added CreateUser and GetUser endpoints
+
+"Implemented CreateUser and GetUser endpoints in UserController."
+![Screenshot (160)](https://github.com/user-attachments/assets/7a463e56-180a-46b3-a36f-98011e237b38)
+
+# Implemented GetAll and UpdateUser endpoints
+
+"Added GetAll and UpdateUser endpoints to UserController for retrieving and updating users."
+![Screenshot (162)](https://github.com/user-attachments/assets/dd6c162e-79ee-4c2b-a5cd-8713e5aec56b)
+
